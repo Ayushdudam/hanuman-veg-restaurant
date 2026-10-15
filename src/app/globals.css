@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: #FDFBF7;
+    --canvas-dark: #0C0A09;
+    --surface: #FFFFFF;
+    --brand-amber: #F59E0B;
+    --brand-terracotta: #D97706;
+    --brand-forest: #15803D;
+    --text-main: #1C1917;
+    --text-muted: #78716C;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--canvas);
+    color: var(--text-main);
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--text-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F1E9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D97706;
+  border-radius: 9999px;
+  border: 2px solid #F5F1E9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B45309;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(253, 251, 247, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 119, 6, 0.12);
+}
+
+.glass-panel-dark {
+  background: rgba(12, 10, 9, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+/* Subtle Indian Culinary Motifs */
+.texture-spice-grid {
+  background-image: radial-gradient(rgba(217, 119, 6, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Indian Veg Seal Mark */
+.veg-box-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #15803D;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+.veg-box-seal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #15803D;
+}
+
+/* Jain Seal Mark */
+.jain-box-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #D97706;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+.jain-box-seal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #D97706;
+}
+
+/* Dosa Golden Glow */
+.amber-glow {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+.terracotta-glow {
+  box-shadow: 0 0 25px rgba(217, 119, 6, 0.25);
+}
