@@ -8,6 +8,7 @@ import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
 import { HeroSection } from "@/components/home/HeroSection";
 import { HeritageSection } from "@/components/home/HeritageSection";
 import { SpecialtiesShowcase } from "@/components/home/SpecialtiesShowcase";
+import { FoodGallerySection } from "@/components/home/FoodGallerySection";
 import { MenuExplorer } from "@/components/home/MenuExplorer";
 import { JainPromiseSection } from "@/components/home/JainPromiseSection";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
@@ -77,19 +78,22 @@ export default function HomePage() {
         {/* 3. Signature Culinary Highlights */}
         <SpecialtiesShowcase onAddToCart={handleAddToCart} />
 
-        {/* 4. Interactive 45+ Menu Explorer with Filters & Search */}
+        {/* 4. Art-Directed Food Gallery with Interactive Lightbox */}
+        <FoodGallerySection />
+
+        {/* 5. Interactive 45+ Menu Explorer with Filters & Search */}
         <MenuExplorer
           onAddToCart={handleAddToCart}
           cartItems={cart}
         />
 
-        {/* 5. The Jain Promise & Culinary Sanctity */}
+        {/* 6. The Jain Promise & Culinary Sanctity */}
         <JainPromiseSection />
 
-        {/* 6. Customer Proof & Verified Reviews */}
+        {/* 7. Customer Proof & Verified Reviews */}
         <ReviewsSection />
 
-        {/* 7. Sion Circle Map, Coordinates, Timings & Transit Guide */}
+        {/* 8. Sion Circle Map, Coordinates, Timings & Transit Guide */}
         <LocationHoursSection />
       </main>
 
