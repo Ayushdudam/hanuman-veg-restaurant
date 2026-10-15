@@ -83,14 +83,14 @@ export interface RestaurantSettings {
   address: string;
   phone: string;
   phoneDisplay: string;
-  whatsappNumber: string;
+  whatsappNumber?: string;
   landline: string;
   landlineDisplay: string;
   hours: string;
   priceForTwo: string;
   orderingMode: 'menu-and-ordering' | 'menu-only';
   announcement?: string;
-  enableWhatsAppCheckout: boolean;
+  enableWhatsAppCheckout?: boolean;
   enableDirectOrderSubmission: boolean;
   productionBaseUrl?: string;
 }
@@ -137,7 +137,7 @@ export interface RestaurantInfo {
     valueForMoney: number;
     jainOptions: number;
   };
-  whatsappUrlBase: string;
+  whatsappUrlBase?: string;
   googleMapsDirectionsUrl: string;
   googleMapsEmbedUrl: string;
 }

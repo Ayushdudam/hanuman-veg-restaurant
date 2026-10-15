@@ -1,29 +1,18 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { MenuItem } from "@/types/restaurant";
 import { MENU_ITEMS } from "@/data/restaurantData";
-import { Sparkles, Plus, Check, Star, Flame } from "lucide-react";
+import { Sparkles, Check, Flame, Phone } from "lucide-react";
 
 interface SpecialtiesShowcaseProps {
-  onAddToCart: (item: MenuItem) => void;
+  onAddToCart?: (item: MenuItem) => void;
 }
 
-export const SpecialtiesShowcase: React.FC<SpecialtiesShowcaseProps> = ({
-  onAddToCart,
-}) => {
+export const SpecialtiesShowcase: React.FC<SpecialtiesShowcaseProps> = () => {
   // Grab the top 6 signature items
   const signatureItems = MENU_ITEMS.filter((item) => item.isSignature);
-
-  // Curated imagery mapping for the top signatures
-  const itemImages: Record<string, string> = {
-    "si-1": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80", // Dosa
-    "pb-1": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&auto=format&fit=crop&q=80", // Pav bhaji
-    "pb-3": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80", // Jain Pav bhaji
-    "ni-1": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&auto=format&fit=crop&q=80", // Paneer tikka
-    "si-8": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80", // Filter Coffee
-    "bv-1": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&auto=format&fit=crop&q=80", // Falooda
-  };
 
   return (
     <section id="specialties" className="py-20 bg-canvas border-b border-stone-200">
@@ -44,19 +33,19 @@ export const SpecialtiesShowcase: React.FC<SpecialtiesShowcaseProps> = ({
             </p>
           </div>
 
-          <a
-            href="#menu"
+          <Link
+            href="/menu"
             className="self-start md:self-end text-sm font-bold text-brand-terracotta hover:text-brand-terracotta-dark inline-flex items-center gap-1.5 underline decoration-2 underline-offset-4"
           >
-            <span>View All 45+ Menu Items</span>
+            <span>View All 40+ Menu Items</span>
             <span>→</span>
-          </a>
+          </Link>
         </div>
 
         {/* 6 Grid Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {signatureItems.map((item) => {
-            const imgSrc = itemImages[item.id] || "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80";
+            const imgSrc = item.imageUrl || "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80";
 
             return (
               <div
@@ -134,14 +123,21 @@ export const SpecialtiesShowcase: React.FC<SpecialtiesShowcaseProps> = ({
                 </div>
 
                 {/* Card CTA Footer */}
-                <div className="p-5 pt-0">
-                  <button
-                    onClick={() => onAddToCart(item)}
-                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-stone-900 hover:bg-brand-forest text-white text-xs font-bold transition-all shadow-sm group-hover:shadow"
+                <div className="p-5 pt-0 flex gap-2">
+                  <Link
+                    href="/menu"
+                    className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold transition-all border border-stone-200"
                   >
-                    <Plus className="w-4 h-4" />
-                    <span>Add to WhatsApp Order Tray</span>
-                  </button>
+                    <span>View in Menu</span>
+                  </Link>
+                  <a
+                    href="tel:+919820647374"
+                    className="flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-xl bg-stone-900 hover:bg-brand-forest text-white text-xs font-bold transition-all shadow-sm"
+                    title="Call to Order"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Order by Phone</span>
+                  </a>
                 </div>
               </div>
             );

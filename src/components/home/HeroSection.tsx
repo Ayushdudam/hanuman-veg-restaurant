@@ -20,12 +20,11 @@ import {
 } from "lucide-react";
 
 interface HeroSectionProps {
-  onOpenCart: () => void;
+  onOpenCart?: () => void;
   onOpenReservation: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  onOpenCart,
   onOpenReservation,
 }) => {
   const [isOpenNow, setIsOpenNow] = useState(true);
@@ -96,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="space-y-2">
               <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-text-main tracking-tight leading-[1.12]">
                 Authentic Mumbai <br />
-                <span className="text-brand-terracotta underline decoration-brand-amber/40 decoration-wavy underline-offset-8">
+                <span className="text-brand-terracotta">
                   Pure Veg Tiffin
                 </span>{" "}
                 & Sizzling Pav Bhaji
@@ -124,12 +123,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </button>
 
               <a
-                href={`https://wa.me/919820647374?text=${encodeURIComponent("Hello Hanuman Veg Restaurant, I would like to enquire about table availability / takeaway.")}`}
-                target="_blank"
-                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm shadow-sm transition-all"
+                href="tel:+919820647374"
+                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-brand-forest hover:bg-brand-forest-dark text-white font-bold text-xs sm:text-sm shadow-sm transition-all"
               >
                 <Phone className="w-3.5 h-3.5" />
-                <span>WhatsApp Desk</span>
+                <span>Call +91 98206 47374</span>
               </a>
             </div>
 

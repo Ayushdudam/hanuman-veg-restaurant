@@ -1,17 +1,18 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { RESTAURANT_DATA } from "@/data/restaurantData";
-import { Phone, ShoppingBag, Utensils, Navigation } from "lucide-react";
+import { Phone, CalendarDays, Utensils, Navigation } from "lucide-react";
 
 interface MobileStickyBarProps {
-  cartItemCount: number;
-  onOpenCart: () => void;
+  cartItemCount?: number;
+  onOpenCart?: () => void;
+  onOpenReservation?: () => void;
 }
 
 export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({
-  cartItemCount,
-  onOpenCart,
+  onOpenReservation,
 }) => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 bg-canvas-dark/95 backdrop-blur-lg border-t border-stone-800 py-2.5 px-3 md:hidden shadow-2xl">
@@ -26,13 +27,13 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({
         </a>
 
         {/* View Menu */}
-        <a
-          href="#menu"
+        <Link
+          href="/menu"
           className="flex flex-col items-center justify-center py-1 px-1 rounded-lg text-stone-300 hover:text-white active:bg-stone-800 transition-colors"
         >
-          <Utensils className="w-5 h-5 text-brand-terracotta mb-1" />
-          <span className="text-[10px] font-bold tracking-tight">Menu</span>
-        </a>
+          <Utensils className="w-5 h-5 text-amber-400 mb-1" />
+          <span className="text-[10px] font-bold tracking-tight">QR Menu</span>
+        </Link>
 
         {/* Directions */}
         <a
@@ -45,18 +46,13 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({
           <span className="text-[10px] font-bold tracking-tight">Directions</span>
         </a>
 
-        {/* WhatsApp Order Tray */}
+        {/* Book Table */}
         <button
-          onClick={onOpenCart}
-          className="flex flex-col items-center justify-center py-1 px-1 rounded-lg bg-brand-forest text-white relative active:scale-95 transition-transform"
+          onClick={onOpenReservation}
+          className="flex flex-col items-center justify-center py-1 px-1 rounded-lg bg-brand-forest hover:bg-brand-forest-dark text-white relative active:scale-95 transition-transform"
         >
-          <ShoppingBag className="w-5 h-5 mb-1" />
-          <span className="text-[10px] font-bold tracking-tight">Order Tray</span>
-          {cartItemCount > 0 && (
-            <span className="absolute -top-1.5 -right-1 bg-brand-amber text-slate-900 font-extrabold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md animate-pulse">
-              {cartItemCount}
-            </span>
-          )}
+          <CalendarDays className="w-5 h-5 mb-1 text-emerald-100" />
+          <span className="text-[10px] font-bold tracking-tight">Book Table</span>
         </button>
       </div>
     </div>

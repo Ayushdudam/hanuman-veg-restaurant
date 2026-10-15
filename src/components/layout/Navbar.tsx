@@ -19,14 +19,12 @@ import {
 } from "lucide-react";
 
 interface NavbarProps {
-  cartItemCount: number;
-  onOpenCart: () => void;
+  cartItemCount?: number;
+  onOpenCart?: () => void;
   onOpenReservation: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  cartItemCount,
-  onOpenCart,
   onOpenReservation,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -158,18 +156,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>Table Booking</span>
             </button>
 
-            <button
-              onClick={onOpenCart}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-lg bg-brand-forest hover:bg-emerald-800 text-white transition-all shadow-sm relative group"
+            <a
+              href={`tel:${RESTAURANT_DATA.phone}`}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold rounded-lg bg-stone-900 hover:bg-brand-forest text-white transition-all shadow-sm"
             >
-              <ShoppingBag className="w-4 h-4 transition-transform group-hover:scale-110" />
-              <span>Tray</span>
-              {cartItemCount > 0 && (
-                <span className="w-5 h-5 rounded-full bg-brand-amber text-slate-900 font-extrabold text-[11px] flex items-center justify-center animate-bounce">
-                  {cartItemCount}
-                </span>
-              )}
-            </button>
+              <Phone className="w-3.5 h-3.5 text-amber-400" />
+              <span>Call Desk</span>
+            </a>
           </div>
 
           {/* Mobile Right Controls */}
@@ -181,19 +174,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <QrCode className="w-4 h-4" />
               <span>Menu</span>
             </Link>
-
-            <button
-              onClick={onOpenCart}
-              aria-label="Order Cart"
-              className="p-2 rounded-lg bg-emerald-50 text-brand-forest border border-emerald-200 relative"
-            >
-              <ShoppingBag className="w-4 h-4" />
-              {cartItemCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-brand-amber text-slate-900 font-bold text-[10px] flex items-center justify-center">
-                  {cartItemCount}
-                </span>
-              )}
-            </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -262,16 +242,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>Book Table</span>
               </button>
 
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenCart();
-                }}
-                className="w-full py-2.5 rounded-xl bg-brand-forest text-white text-xs font-bold flex items-center justify-center gap-1.5"
+              <a
+                href={`tel:${RESTAURANT_DATA.phone}`}
+                className="w-full py-2.5 rounded-xl bg-stone-900 hover:bg-brand-forest text-white text-xs font-bold flex items-center justify-center gap-1.5"
               >
-                <ShoppingBag className="w-3.5 h-3.5" />
-                <span>Order Tray ({cartItemCount})</span>
-              </button>
+                <Phone className="w-3.5 h-3.5 text-amber-400" />
+                <span>Call Desk</span>
+              </a>
             </div>
           </div>
         )}

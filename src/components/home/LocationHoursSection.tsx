@@ -5,7 +5,6 @@ import {
   Clock, 
   Navigation, 
   Phone, 
-  MessageSquare, 
   Train, 
   Film, 
   Car, 
@@ -56,7 +55,7 @@ export const LocationHoursSection: React.FC = () => {
               {/* Direct Telephones */}
               <div className="space-y-2.5 pt-2 border-t border-stone-100">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-stone-500 font-medium">Direct Mobile / WhatsApp:</span>
+                  <span className="text-stone-500 font-medium">Direct Mobile / Orders:</span>
                   <a
                     href={`tel:${RESTAURANT_DATA.phone}`}
                     className="font-bold text-stone-900 hover:text-brand-terracotta transition-colors flex items-center gap-1"
@@ -122,13 +121,11 @@ export const LocationHoursSection: React.FC = () => {
               </a>
 
               <a
-                href={`https://wa.me/919820647374?text=${encodeURIComponent("Hello Hanuman Veg Restaurant, I would like to inquire about visiting / takeaway order.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-stone-900 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all"
+                href={`tel:${RESTAURANT_DATA.phone}`}
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-stone-900 hover:bg-brand-forest text-white font-bold text-xs shadow-xs transition-all"
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>Chat on WhatsApp (+91 98206 47374)</span>
+                <Phone className="w-4 h-4" />
+                <span>Call Restaurant ({RESTAURANT_DATA.phoneDisplay})</span>
               </a>
             </div>
           </div>

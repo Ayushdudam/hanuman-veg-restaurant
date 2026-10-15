@@ -8,8 +8,7 @@ import {
   ShieldCheck, 
   Heart, 
   Navigation, 
-  ExternalLink,
-  MessageSquare
+  ExternalLink
 } from "lucide-react";
 
 export const Footer: React.FC = () => {
@@ -114,7 +113,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 4: Quick Navigation & WhatsApp */}
+          {/* Col 4: Quick Navigation & Orders */}
           <div className="space-y-4">
             <h4 className="text-sm font-serif font-bold text-white uppercase tracking-wider">
               Quick Navigation
@@ -143,13 +142,11 @@ export const Footer: React.FC = () => {
 
             <div className="pt-2">
               <a
-                href={`https://wa.me/919820647374?text=${encodeURIComponent("Hello Hanuman Veg Restaurant, I would like to inquire about ordering / dining.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-bold rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white transition-all shadow-sm"
+                href={`tel:${RESTAURANT_DATA.phone}`}
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-bold rounded-lg bg-brand-forest hover:bg-brand-forest-dark text-white transition-all shadow-sm"
               >
-                <MessageSquare className="w-3.5 h-3.5" />
-                <span>Chat on WhatsApp</span>
+                <Phone className="w-3.5 h-3.5 text-amber-300" />
+                <span>Call Desk: {RESTAURANT_DATA.phoneDisplay}</span>
               </a>
             </div>
           </div>

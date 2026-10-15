@@ -30,8 +30,7 @@ import {
   MapPin, 
   AlertCircle,
   ChevronRight,
-  Send,
-  MessageSquare
+  Send
 } from "lucide-react";
 
 // Fallback image map
@@ -199,32 +198,6 @@ function MenuContent() {
     } finally {
       setIsSubmittingOrder(false);
     }
-  };
-
-  // WhatsApp Checkout Generator
-  const handleWhatsAppCheckout = () => {
-    if (cart.length === 0) return;
-
-    let msg = `*NEW ORDER - HANUMAN VEG RESTAURANT SION*\n`;
-    msg += `📍 Sion Circle, Mumbai (Opp. MovieMax Cinema)\n`;
-    msg += `------------------------------------\n`;
-    msg += `*Order Mode:* ${tableNumber ? `Dine-in (Table ${tableNumber})` : "Direct Parcel / Dine-in"}\n`;
-    if (customerName.trim()) msg += `*Customer:* ${customerName.trim()}\n`;
-    if (customerPhone.trim()) msg += `*Phone:* ${customerPhone.trim()}\n`;
-    msg += `------------------------------------\n`;
-    msg += `*ITEMS:*\n`;
-    cart.forEach((c) => {
-      msg += `• ${c.quantity}x ${c.item.name} (₹${c.item.price * c.quantity})\n`;
-      if (c.instructions) msg += `   ↳ Note: ${c.instructions}\n`;
-    });
-    msg += `------------------------------------\n`;
-    msg += `*TOTAL AMOUNT:* ₹${cartTotalAmount}\n`;
-    if (orderNotes.trim()) msg += `*Kitchen Instructions:* ${orderNotes.trim()}\n`;
-    msg += `------------------------------------\n`;
-    msg += `Please confirm my order. Thank you!`;
-
-    const encoded = encodeURIComponent(msg);
-    window.open(`https://wa.me/919820647374?text=${encoded}`, "_blank");
   };
 
   const getCategoryIcon = (id: string) => {
@@ -875,13 +848,13 @@ function MenuContent() {
                       <span>{isSubmittingOrder ? "Submitting..." : "Submit Order to Kitchen"}</span>
                     </button>
 
-                    <button
-                      onClick={handleWhatsAppCheckout}
-                      className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all"
+                    <a
+                      href="tel:+919820647374"
+                      className="w-full py-2.5 rounded-xl bg-stone-900 hover:bg-brand-forest text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all"
                     >
-                      <MessageSquare className="w-4 h-4" />
-                      <span>Continue via WhatsApp</span>
-                    </button>
+                      <Phone className="w-4 h-4 text-amber-400" />
+                      <span>Call to Confirm / Order (+91 98206 47374)</span>
+                    </a>
                   </div>
                 </div>
               </>

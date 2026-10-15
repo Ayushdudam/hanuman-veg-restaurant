@@ -26,15 +26,15 @@ const DEFAULT_SETTINGS: RestaurantSettings = {
   address: RESTAURANT_DATA.address,
   phone: RESTAURANT_DATA.phone,
   phoneDisplay: RESTAURANT_DATA.phoneDisplay,
-  whatsappNumber: "919820647374",
+  whatsappNumber: undefined,
   landline: RESTAURANT_DATA.landline,
   landlineDisplay: RESTAURANT_DATA.landlineDisplay,
   hours: RESTAURANT_DATA.hours,
   priceForTwo: RESTAURANT_DATA.priceForTwo,
-  orderingMode: "menu-and-ordering",
+  orderingMode: "menu-only",
   announcement: "Serving authentic Mumbai Tiffin & Pure Jain delicacies at Sion Circle since decades.",
-  enableWhatsAppCheckout: true,
-  enableDirectOrderSubmission: true,
+  enableWhatsAppCheckout: false,
+  enableDirectOrderSubmission: false,
   productionBaseUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://hanuman-veg-restaurant.vercel.app",
 };
 
@@ -59,7 +59,7 @@ const INITIAL_MENU_ITEMS: MenuItem[] = MENU_ITEMS.map((item, idx) => ({
   ...item,
   isAvailable: true,
   sortOrder: idx + 1,
-  imageUrl: item.imageTag || undefined,
+  imageUrl: item.imageUrl || item.imageTag || undefined,
 }));
 
 // In-memory cache
