@@ -4,7 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { MENU_ITEMS, MENU_CATEGORIES, RESTAURANT_DATA } from "@/data/restaurantData";
-import { MenuItem, MenuCategory } from "@/types/restaurant";
+import { MenuItem } from "@/types/restaurant";
 import { 
   Search, 
   X, 
@@ -21,7 +21,8 @@ import {
   Wine, 
   Navigation, 
   Lock,
-  Check
+  Check,
+  Film
 } from "lucide-react";
 
 interface DigitalMenuProps {
@@ -106,7 +107,6 @@ export const DigitalMenu: React.FC<DigitalMenuProps> = ({ initialTable }) => {
           
           {/* Brand Name & Pure Veg Mark */}
           <Link href="/" className="flex items-center gap-2 group">
-            {/* Green Veg Seal */}
             <div className="veg-box-seal shrink-0 shadow-2xs" title="100% Pure Vegetarian">
               <div className="veg-box-seal-dot" />
             </div>
@@ -163,39 +163,123 @@ export const DigitalMenu: React.FC<DigitalMenuProps> = ({ initialTable }) => {
         )}
       </header>
 
-      {/* 2. RESTAURANT DETAILS & INTRODUCTION */}
-      <section className="bg-white border-b border-stone-200/80 pt-6 pb-5 px-4">
-        <div className="max-w-3xl mx-auto text-center space-y-2">
+      {/* 2. RICH RESTAURANT STORY & INTRODUCTION WITH 4 PILLARS */}
+      <section className="bg-white border-b border-stone-200/80 pt-6 pb-6 px-4">
+        <div className="max-w-3xl mx-auto space-y-4">
           
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-            100% Pure Vegetarian &amp; Dedicated Jain Kitchen
-          </div>
-
-          <h1 className="font-serif text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">
-            Hanuman Veg Restaurant
-          </h1>
-
-          <p className="text-xs sm:text-sm text-stone-600 font-medium">
-            Pure Vegetarian Restaurant • Sion Circle, Mumbai
-          </p>
-
-          <p className="text-xs text-stone-500 max-w-lg mx-auto leading-relaxed pt-0.5">
-            Explore our menu and choose your favourites. Orders are taken verbally by your server.
-          </p>
-
-          {/* Quick info row */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-[11px] text-stone-500">
-            <span className="flex items-center gap-1">
-              <Clock className="w-3 h-3 text-amber-600" />
-              Open Daily: 7:30 AM – 11:30 PM
+          {/* Status & Landmark Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-stone-100 text-stone-800 border border-stone-200">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Open Daily 7:30 AM – 11:30 PM IST
             </span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              <MapPin className="w-3 h-3 text-amber-600" />
-              Opp. MovieMax Cinema, Sion West
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-900 border border-amber-200/80">
+              <Sparkles className="w-3 h-3 text-amber-700" />
+              Sion Circle Heritage Landmark
             </span>
           </div>
+
+          {/* Main Headline (Clean typography, zero unwanted underlines) */}
+          <div className="text-center space-y-1.5">
+            <h1 className="font-serif text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight">
+              Authentic Mumbai <br />
+              <span className="text-brand-terracotta">Pure Veg Tiffin</span> &amp; Sizzling Pav Bhaji
+            </h1>
+            <p className="text-xs sm:text-sm font-semibold text-stone-600">
+              Hotel Hanuman Sion • Opposite MovieMax Cinema, Mumbai 400022
+            </p>
+          </div>
+
+          {/* Rich Description Narrative */}
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed text-center max-w-2xl mx-auto">
+            Welcome to <strong>Hanuman Veg Restaurant (Hotel Hanuman)</strong>, the iconic pure vegetarian landmark at Sion Circle. For decades, we have served generations of Mumbai diners, cinema goers, and college students with crisp golden dosas, Amul butter pav bhaji, slow-cooked North Indian gravies, authentic Kumbakonam filter kaapi, and dedicated pure Jain preparations.
+          </p>
+
+          {/* Trust Metrics Bar */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 max-w-2xl mx-auto">
+            <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-center">
+              <div className="flex items-center justify-center gap-1 text-amber-600 font-bold text-sm sm:text-base">
+                <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                <span>4.0 / 5.0</span>
+              </div>
+              <p className="text-[10px] text-stone-500 font-medium">6,000+ Reviews</p>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-center">
+              <div className="flex items-center justify-center gap-1 text-emerald-700 font-bold text-xs sm:text-sm">
+                <div className="veg-box-seal scale-75 origin-center" />
+                <span>100% Pure Veg</span>
+              </div>
+              <p className="text-[10px] text-stone-500 font-medium">Zero Meat Kitchen</p>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-center">
+              <div className="flex items-center justify-center gap-1 text-amber-800 font-bold text-xs sm:text-sm">
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-700" />
+                <span>Jain Kitchen</span>
+              </div>
+              <p className="text-[10px] text-stone-500 font-medium">Zero Root Veg Prep</p>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-center">
+              <div className="font-bold text-stone-900 text-xs sm:text-sm">₹900 – ₹1,000</div>
+              <p className="text-[10px] text-stone-500 font-medium">Approx. for two</p>
+            </div>
+          </div>
+
+          {/* 4 Pillars Cards Grid (Exact content from Heritage Section) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 max-w-2xl mx-auto">
+            <div className="p-3 rounded-xl bg-amber-50/60 border border-amber-200/70 text-left">
+              <div className="flex items-center gap-2 mb-1">
+                <Film className="w-4 h-4 text-amber-700 shrink-0" />
+                <h4 className="text-xs font-bold text-stone-900">The Sion Circle Landmark</h4>
+              </div>
+              <p className="text-[11px] text-stone-600 leading-relaxed">
+                Directly opposite MovieMax Cinema in Rupam Building, an iconic culinary anchor for cinema goers, commuters, and families across decades.
+              </p>
+            </div>
+
+            <div className="p-3 rounded-xl bg-amber-50/60 border border-amber-200/70 text-left">
+              <div className="flex items-center gap-2 mb-1">
+                <Sparkles className="w-4 h-4 text-amber-700 shrink-0" />
+                <h4 className="text-xs font-bold text-stone-900">Generational Consistency</h4>
+              </div>
+              <p className="text-[11px] text-stone-600 leading-relaxed">
+                Time-honored recipes with authentic Amul dairy butter, stone-ground spices, zero synthetic colors, and freshly simmered tiffin sambar.
+              </p>
+            </div>
+
+            <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/70 text-left">
+              <div className="flex items-center gap-2 mb-1">
+                <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
+                <h4 className="text-xs font-bold text-stone-900">Uncompromising Jain Sanctity</h4>
+              </div>
+              <p className="text-[11px] text-stone-600 leading-relaxed">
+                Dedicated tawas and cookware for 100% root-veg-free preparations using green raw bananas, revered by Sion and Matunga Jain communities.
+              </p>
+            </div>
+
+            <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/70 text-left">
+              <div className="flex items-center gap-2 mb-1">
+                <Clock className="w-4 h-4 text-emerald-700 shrink-0" />
+                <h4 className="text-xs font-bold text-stone-900">Continuous 16-Hour Service</h4>
+              </div>
+              <p className="text-[11px] text-stone-600 leading-relaxed">
+                From 7:30 AM morning tiffin and filter coffee to late-night 11:30 PM post-movie dinners, operating without intermission 365 days a year.
+              </p>
+            </div>
+          </div>
+
+          {/* Verbal Order Highlight Notice */}
+          <div className="mt-3 p-3 rounded-xl bg-stone-900 text-stone-200 text-center">
+            <p className="text-xs font-bold text-white">
+              Dine-In Digital Menu • Verbal Table Ordering
+            </p>
+            <p className="text-[11px] text-stone-400 mt-0.5">
+              Explore our complete menu below and place your order verbally with your server.
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -469,7 +553,6 @@ const MenuDishRow: React.FC<{ dish: MenuItem }> = ({ dish }) => {
         
         {/* Badges / Dietary Tags */}
         <div className="flex items-center gap-1.5 flex-wrap">
-          {/* Pure Jain vs Jain Available vs Pure Veg Seal */}
           {dish.dietary === "pure-jain" ? (
             <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-900 border border-amber-300">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
@@ -487,14 +570,12 @@ const MenuDishRow: React.FC<{ dish: MenuItem }> = ({ dish }) => {
             </span>
           )}
 
-          {/* Signature / Bestseller Badge */}
           {dish.badge && (
             <span className="px-1.5 py-0.5 rounded text-[10px] font-extrabold bg-amber-100 text-stone-900 border border-amber-300">
               {dish.badge}
             </span>
           )}
 
-          {/* Spice Level Indicator */}
           {dish.spiceLevel !== undefined && dish.spiceLevel > 1 && (
             <span className="inline-flex items-center gap-0.5 text-[10px] text-red-600 font-bold">
               <Flame className="w-2.5 h-2.5 fill-red-500" />
