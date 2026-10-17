@@ -87,7 +87,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isBestseller: true,
     isJainFriendly: false,
     badge: "Heritage Bestseller",
-    imageUrl: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "si-2",
@@ -99,7 +98,6 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isJainFriendly: true,
     badge: "Breakfast Favorite",
-    imageUrl: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "si-3",
@@ -111,7 +109,6 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isBestseller: true,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "si-4",
@@ -122,7 +119,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 1,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "si-5",
@@ -134,7 +130,6 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isJainFriendly: true,
     badge: "Light & Healthy",
-    imageUrl: "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "si-6",
@@ -145,7 +140,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 1,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "si-7",
@@ -156,7 +150,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 1,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "si-8",
@@ -169,7 +162,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isSignature: true,
     isJainFriendly: true,
     badge: "Iconic Brew",
-    imageUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
   },
 
   // MUMBAI PAV BHAJI & STREET FOOD
@@ -185,7 +177,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isBestseller: true,
     isJainFriendly: false,
     badge: "Sion's #1 Craving",
-    imageUrl: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "pb-2",
@@ -197,7 +188,6 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "pb-3",
@@ -210,7 +200,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isSignature: true,
     isJainFriendly: true,
     badge: "Pure Jain Heritage",
-    imageUrl: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "pb-4",
@@ -221,7 +210,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 3,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "pb-5",
@@ -232,7 +220,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 2,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "pb-6",
@@ -243,7 +230,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-jain",
     spiceLevel: 0,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "pb-7",
@@ -254,7 +240,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 1,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
   },
 
   // NORTH INDIAN & TANDOOR
@@ -270,7 +255,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isBestseller: true,
     isJainFriendly: false,
     badge: "Chef Specialty",
-    imageUrl: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ni-2",
@@ -282,7 +266,6 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 1,
     isJainFriendly: true,
     badge: "Family Favorite",
-    imageUrl: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ni-3",
@@ -293,7 +276,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 3,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ni-4",
@@ -304,7 +286,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "jain-available",
     spiceLevel: 1,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ni-5",
@@ -315,7 +296,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 1,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ni-6",
@@ -327,7 +307,6 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 2,
     isBestseller: true,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ni-7",
@@ -338,7 +317,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 0,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ni-8",
@@ -349,7 +327,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-jain",
     spiceLevel: 0,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=800&auto=format&fit=crop&q=80",
   },
 
   // INDO-CHINESE
@@ -364,7 +341,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isBestseller: true,
     isJainFriendly: false,
     badge: "Appetizer Star",
-    imageUrl: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ic-2",
@@ -375,7 +351,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 2,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ic-3",
@@ -389,7 +364,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isBestseller: true,
     isJainFriendly: false,
     badge: "Mumbai Legend",
-    imageUrl: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ic-4",
@@ -400,7 +374,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "jain-available",
     spiceLevel: 1,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "ic-5",
@@ -411,7 +384,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 3,
     isJainFriendly: false,
-    imageUrl: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&auto=format&fit=crop&q=80",
   },
 
   // DEDICATED JAIN SPECIALS
@@ -427,7 +399,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isBestseller: true,
     isJainFriendly: true,
     badge: "100% Jain Pure",
-    imageUrl: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "jn-2",
@@ -438,7 +409,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-jain",
     spiceLevel: 1,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "jn-3",
@@ -450,7 +420,6 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isJainFriendly: true,
     badge: "Delicate & Rich",
-    imageUrl: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "jn-4",
@@ -461,7 +430,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-jain",
     spiceLevel: 1,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "jn-5",
@@ -472,7 +440,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-jain",
     spiceLevel: 1,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "jn-6",
@@ -483,7 +450,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-jain",
     spiceLevel: 0,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
   },
 
   // JUICES, SHAKES & FALOODA
@@ -499,7 +465,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isBestseller: true,
     isJainFriendly: true,
     badge: "Customer Favorite",
-    imageUrl: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "bv-2",
@@ -512,7 +477,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isBestseller: true,
     isJainFriendly: true,
     badge: "Seasonal Gem",
-    imageUrl: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "bv-3",
@@ -523,7 +487,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-jain",
     spiceLevel: 0,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "bv-4",
@@ -534,7 +497,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-jain",
     spiceLevel: 0,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "bv-5",
@@ -546,7 +508,6 @@ export const MENU_ITEMS: MenuItem[] = [
     spiceLevel: 0,
     isSignature: true,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1546173159-315724a31696?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "bv-6",
@@ -557,7 +518,6 @@ export const MENU_ITEMS: MenuItem[] = [
     dietary: "pure-veg",
     spiceLevel: 0,
     isJainFriendly: true,
-    imageUrl: "https://images.unsplash.com/photo-1556881286-fc6915169721?w=800&auto=format&fit=crop&q=80",
   },
 ];
 

@@ -58,7 +58,6 @@ export default function RootLayout({
     name: RESTAURANT_DATA.name,
     alternateName: RESTAURANT_DATA.legalName,
     description: RESTAURANT_DATA.tagline,
-    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=1200&q=80",
     servesCuisine: [
       "Pure Vegetarian",
       "Jain",
