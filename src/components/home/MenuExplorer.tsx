@@ -89,7 +89,7 @@ export const MenuExplorer: React.FC<MenuExplorerProps> = () => {
   }, [selectedCategory, searchQuery, jainOnlyFilter, bestsellerOnlyFilter]);
 
   return (
-    <section id="menu" className="py-20 bg-stone-50/60 border-b border-stone-200">
+    <section id="menu" className="scroll-mt-20 sm:scroll-mt-24 py-16 sm:py-20 bg-stone-50/60 border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -223,23 +223,18 @@ export const MenuExplorer: React.FC<MenuExplorerProps> = () => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredItems.map((item) => {
               return (
                 <div
                   key={item.id}
-                  className="bg-white rounded-2xl overflow-hidden border border-stone-200/90 shadow-sm hover:shadow-warm transition-all duration-200 flex flex-col justify-between"
+                  className="bg-white rounded-2xl border border-stone-200/90 shadow-sm hover:shadow-warm transition-all duration-200 p-5 flex flex-col justify-between space-y-3"
                 >
-                  <div>
-                    {item.imageUrl && (
-                      <div className="relative h-48 w-full overflow-hidden bg-stone-100">
-                        <img
-                          src={item.imageUrl}
-                          alt={item.name}
-                          className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
-                          loading="lazy"
-                        />
-                        <div className="absolute top-2.5 right-2.5 bg-white/95 backdrop-blur-sm p-1 rounded-md shadow-sm">
+                  <div className="space-y-2.5">
+                    {/* Header Row: Title, Badges & Price */}
+                    <div className="flex items-start justify-between gap-3 pb-2 border-b border-stone-100">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-1.5 flex-wrap">
                           {item.dietary === "pure-jain" ? (
                             <div className="jain-box-seal" title="Dedicated Pure Jain">
                               <div className="jain-box-seal-dot" />
@@ -249,98 +244,66 @@ export const MenuExplorer: React.FC<MenuExplorerProps> = () => {
                               <div className="veg-box-seal-dot" />
                             </div>
                           )}
-                        </div>
-                        {item.badge && (
-                          <div className="absolute top-2.5 left-2.5">
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-400 text-stone-950 shadow-sm">
+
+                          {item.badge && (
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
                               {item.badge}
                             </span>
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                    <div className="p-4 sm:p-5 space-y-2.5">
-                      {/* Header Row: Title & Badges */}
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          {!item.imageUrl && (
-                            <div className="flex items-center gap-2 flex-wrap mb-1">
-                              {item.badge && (
-                                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
-                                  {item.badge}
-                                </span>
-                              )}
-                              {item.dietary === "pure-jain" && (
-                                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-800 border border-orange-200">
-                                  Pure Jain
-                                </span>
-                              )}
-                            </div>
                           )}
 
-                          <h3 className="font-serif text-base font-bold text-text-main leading-snug">
-                            {item.name}
-                          </h3>
+                          {item.dietary === "pure-jain" && (
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-800 border border-orange-200">
+                              Pure Jain
+                            </span>
+                          )}
                         </div>
 
-                        {!item.imageUrl && (
-                          <div className="shrink-0 mt-0.5">
-                            {item.dietary === "pure-jain" ? (
-                              <div className="jain-box-seal" title="Dedicated Pure Jain">
-                                <div className="jain-box-seal-dot" />
-                              </div>
-                            ) : (
-                              <div className="veg-box-seal" title="100% Pure Vegetarian">
-                                <div className="veg-box-seal-dot" />
-                              </div>
-                            )}
-                          </div>
-                        )}
+                        <h3 className="font-serif text-base font-bold text-text-main leading-snug">
+                          {item.name}
+                        </h3>
                       </div>
 
-                      {/* Description */}
-                      <p className="text-xs text-text-muted leading-relaxed line-clamp-2">
-                        {item.description}
-                      </p>
-
-                      {/* Tags row */}
-                      <div className="flex items-center gap-2 pt-1 text-[11px] text-stone-500 flex-wrap">
-                        {item.dietary === "pure-jain" && (
-                          <span className="inline-flex items-center gap-1 font-semibold text-orange-800 bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
-                            Pure Jain
-                          </span>
-                        )}
-                        {item.isJainFriendly && item.dietary !== "pure-jain" && (
-                          <span className="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                            <Check className="w-3 h-3" /> Jain Prep Available
-                          </span>
-                        )}
-
-                        {typeof item.spiceLevel === "number" && item.spiceLevel > 0 && (
-                          <span className="inline-flex items-center gap-1 text-stone-600 bg-stone-100 px-2 py-0.5 rounded">
-                            <Flame className="w-3 h-3 text-amber-600" />
-                            <span>
-                              {item.spiceLevel === 1 ? "Mild" : item.spiceLevel === 2 ? "Medium" : "Spicy"}
-                            </span>
-                          </span>
-                        )}
+                      {/* Prominent Price */}
+                      <div className="text-right shrink-0">
+                        <span className="font-sans text-base sm:text-lg font-extrabold text-stone-900">
+                          ₹{item.price}
+                        </span>
                       </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xs text-text-muted leading-relaxed line-clamp-2">
+                      {item.description}
+                    </p>
+
+                    {/* Tags row */}
+                    <div className="flex items-center gap-2 pt-1 text-[11px] text-stone-500 flex-wrap">
+                      {item.isJainFriendly && item.dietary !== "pure-jain" && (
+                        <span className="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                          <Check className="w-3 h-3" /> Jain Prep Available
+                        </span>
+                      )}
+
+                      {typeof item.spiceLevel === "number" && item.spiceLevel > 0 && (
+                        <span className="inline-flex items-center gap-1 text-stone-600 bg-stone-100 px-2 py-0.5 rounded">
+                          <Flame className="w-3 h-3 text-amber-600" />
+                          <span>
+                            {item.spiceLevel === 1 ? "Mild" : item.spiceLevel === 2 ? "Medium" : "Spicy"}
+                          </span>
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   {/* Price & Action Row */}
-                  <div className="p-4 sm:p-5 pt-3 border-t border-stone-100 flex items-center justify-between mt-2">
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider text-stone-400 block font-semibold">Price</span>
-                      <div className="font-serif text-lg font-bold text-stone-900">
-                        ₹{item.price}
-                      </div>
-                    </div>
+                  <div className="pt-2.5 border-t border-stone-100 flex items-center justify-between">
+                    <span className="text-[11px] text-stone-400 font-medium">
+                      Verbal Table Order
+                    </span>
 
                     <a
                       href="tel:+919820647374"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-stone-900 hover:bg-brand-forest text-white transition-all shadow-sm"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-stone-900 hover:bg-brand-forest text-white transition-all shadow-sm"
                       title="Call to Order"
                     >
                       <Phone className="w-3.5 h-3.5 text-amber-400" />

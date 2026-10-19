@@ -30,7 +30,7 @@ export const JainPromiseSection: React.FC = () => {
   ];
 
   return (
-    <section id="jain-promise" className="py-20 bg-amber-50/50 border-b border-amber-200/60 relative overflow-hidden">
+    <section id="jain-promise" className="scroll-mt-20 sm:scroll-mt-24 py-16 sm:py-20 bg-amber-50/50 border-b border-amber-200/60 relative overflow-hidden">
       {/* Decorative Warm Ring Background */}
       <div className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-brand-amber/10 blur-3xl pointer-events-none" />
 

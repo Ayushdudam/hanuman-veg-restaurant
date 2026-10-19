@@ -175,77 +175,153 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           </div>
 
-          {/* Right Column: Interactive Visual Showcase Collage */}
-          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+          {/* Right Column: Text & Price Quick Highlights Card (0 photos, 0 overlaps) */}
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+            <div className="bg-white rounded-3xl border border-stone-200/90 shadow-warm p-5 sm:p-6 space-y-4">
               
-              {/* Main Visual Feature Card */}
-              <div className="rounded-3xl overflow-hidden bg-white border border-stone-200/90 shadow-warm-lg p-3">
-                <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-stone-900">
-                  <img
-                    src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80"
-                    alt="Authentic Crispy Butter Mysore Masala Dosa"
-                    className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-transparent to-black/20" />
-                  
-                  {/* Floating Badges on Image */}
-                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-forest flex items-center gap-1.5 shadow-md">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Pure Vegetarian Legacy</span>
+              {/* Card Header */}
+              <div className="flex items-center justify-between pb-3 border-b border-stone-100">
+                <div className="flex items-center gap-2">
+                  <div className="veg-box-seal shrink-0">
+                    <div className="veg-box-seal-dot" />
                   </div>
-
-                  <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <span className="text-[10px] sm:text-[11px] font-semibold text-brand-amber uppercase tracking-wider block">
-                      Chef Signature Since Decades
-                    </span>
-                    <h3 className="font-serif text-lg sm:text-xl font-bold leading-tight">
-                      Butter Mysore Masala Dosa
+                  <div>
+                    <h3 className="font-serif text-base sm:text-lg font-bold text-stone-900 leading-tight">
+                      Popular Favourites
                     </h3>
-                    <p className="text-xs text-stone-200 mt-0.5 line-clamp-1">
-                      Golden crisp crepe layered with spicy chutney & melting Amul butter
+                    <p className="text-[11px] text-stone-500 font-medium">
+                      Hotel Hanuman • Sion Circle
                     </p>
                   </div>
                 </div>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-stone-900 border border-amber-200">
+                  Daily Fresh
+                </span>
+              </div>
 
-                {/* Secondary Ticker Grid */}
-                <div className="grid grid-cols-2 gap-2 mt-2.5">
-                  <div className="p-2.5 rounded-xl bg-amber-50/80 border border-amber-200/60 flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-brand-terracotta shrink-0">
-                      <Flame className="w-4 h-4" />
+              {/* Dish Names and Verified Prices List */}
+              <div className="space-y-3 divide-y divide-stone-100">
+                <div className="flex items-start justify-between gap-3 pt-1">
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs sm:text-sm font-bold text-stone-900">
+                        Butter Mysore Masala Dosa
+                      </span>
+                      <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-50 text-amber-900 border border-amber-200">
+                        Bestseller
+                      </span>
                     </div>
-                    <div>
-                      <h4 className="text-xs font-bold text-stone-900">Special Pav Bhaji</h4>
-                      <p className="text-[10px] text-stone-600">Slow tawa roasted in butter</p>
-                    </div>
+                    <p className="text-[11px] text-stone-500 line-clamp-1">
+                      Crisp golden crepe layered with fiery chutney &amp; melting Amul butter
+                    </p>
                   </div>
+                  <span className="font-bold text-stone-900 text-sm sm:text-base shrink-0">
+                    ₹150
+                  </span>
+                </div>
 
-                  <div className="p-2.5 rounded-xl bg-emerald-50/80 border border-emerald-200/60 flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-brand-forest shrink-0">
-                      <Coffee className="w-4 h-4" />
+                <div className="flex items-start justify-between gap-3 pt-3">
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs sm:text-sm font-bold text-stone-900">
+                        Special Mumbai Pav Bhaji
+                      </span>
+                      <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-50 text-amber-900 border border-amber-200">
+                        Iconic
+                      </span>
                     </div>
-                    <div>
-                      <h4 className="text-xs font-bold text-stone-900">Madras Kaapi</h4>
-                      <p className="text-[10px] text-stone-600">Brass dabarah filter brew</p>
-                    </div>
+                    <p className="text-[11px] text-stone-500 line-clamp-1">
+                      Slow tawa-roasted spiced bhaji topped with Amul butter &amp; soft pavs
+                    </p>
                   </div>
+                  <span className="font-bold text-stone-900 text-sm sm:text-base shrink-0">
+                    ₹160
+                  </span>
+                </div>
+
+                <div className="flex items-start justify-between gap-3 pt-3">
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs sm:text-sm font-bold text-stone-900">
+                        Idli Sambar (2 Pcs)
+                      </span>
+                      <span className="text-[10px] font-semibold px-1.5 py-0.2 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                        Jain Available
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-stone-500 line-clamp-1">
+                      Steamed rice-lentil cakes with drumstick sambar &amp; coconut chutney
+                    </p>
+                  </div>
+                  <span className="font-bold text-stone-900 text-sm sm:text-base shrink-0">
+                    ₹90
+                  </span>
+                </div>
+
+                <div className="flex items-start justify-between gap-3 pt-3">
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs sm:text-sm font-bold text-stone-900">
+                        Jain Paneer Butter Masala
+                      </span>
+                      <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-orange-50 text-orange-800 border border-orange-200">
+                        Pure Jain
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-stone-500 line-clamp-1">
+                      Fresh dairy paneer in rich tomato-cashew gravy with zero root veg
+                    </p>
+                  </div>
+                  <span className="font-bold text-stone-900 text-sm sm:text-base shrink-0">
+                    ₹240
+                  </span>
+                </div>
+
+                <div className="flex items-start justify-between gap-3 pt-3">
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs sm:text-sm font-bold text-stone-900">
+                        Authentic Filter Kaapi
+                      </span>
+                      <span className="text-[10px] font-semibold px-1.5 py-0.2 rounded bg-stone-100 text-stone-700">
+                        Hot Brew
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-stone-500 line-clamp-1">
+                      Freshly brewed South Indian chicory blend in traditional dabarah
+                    </p>
+                  </div>
+                  <span className="font-bold text-stone-900 text-sm sm:text-base shrink-0">
+                    ₹45
+                  </span>
                 </div>
               </div>
 
-              {/* Floating Customer Quote Tag */}
-              <div className="absolute -bottom-5 -left-3 sm:-left-6 max-w-xs bg-canvas-dark text-white p-3 rounded-2xl border border-stone-800 shadow-2xl hidden sm:block">
-                <div className="flex items-center gap-1 text-brand-amber mb-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-brand-amber" />
-                  ))}
-                  <span className="text-[10px] text-stone-300 ml-1 font-bold">5.0</span>
+              {/* Dine-In Ordering Note & CTA */}
+              <div className="pt-2">
+                <div className="p-3 rounded-2xl bg-stone-50 border border-stone-200/80 text-center space-y-1">
+                  <p className="text-xs font-bold text-stone-800">
+                    Dine-In Digital Menu • Verbal Order Placement
+                  </p>
+                  <p className="text-[11px] text-stone-500">
+                    Browse all dishes with prices and place your order verbally with your server.
+                  </p>
                 </div>
-                <p className="text-xs italic text-stone-300 leading-snug">
-                  &ldquo;A must-visit spot whenever we catch an evening show at MovieMax Sion Circle!&rdquo;
-                </p>
-                <p className="text-[10px] text-brand-amber font-semibold mt-1">
-                  — Pooja V., Sion Resident
-                </p>
+
+                <div className="flex items-center gap-2 pt-3">
+                  <Link
+                    href="/menu"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold text-xs text-center transition-all shadow-sm"
+                  >
+                    View Complete 40+ Menu
+                  </Link>
+                  <a
+                    href="tel:+919820647374"
+                    className="py-2.5 px-3.5 rounded-xl bg-stone-900 hover:bg-brand-forest text-white font-bold text-xs text-center transition-all shadow-sm"
+                  >
+                    Call Desk
+                  </a>
+                </div>
               </div>
 
             </div>

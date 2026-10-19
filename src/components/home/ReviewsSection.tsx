@@ -22,7 +22,7 @@ export const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="py-20 bg-canvas border-b border-stone-200">
+    <section id="reviews" className="scroll-mt-20 sm:scroll-mt-24 py-16 sm:py-20 bg-canvas border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
