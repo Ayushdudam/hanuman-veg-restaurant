@@ -45,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks = [
     { name: "About Heritage", href: "#heritage" },
     { name: "Signatures", href: "#specialties" },
-    { name: "Gallery", href: "#gallery" },
+    { name: "Menu Explorer", href: "#menu" },
     { name: "The Jain Promise", href: "#jain-promise" },
     { name: "Guest Reviews", href: "#reviews" },
     { name: "Hours & Location", href: "#location" },
